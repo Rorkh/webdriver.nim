@@ -1,4 +1,4 @@
-import nim_webdriver/[webdriver, session]
+import webdriver/[webdriver, session]
 
 export webdriver
 export session

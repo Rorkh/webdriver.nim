@@ -7,7 +7,8 @@
 
 import unittest
 
-import nim_webdriver
+import webdriver
+import json
 
 test "run":
   #echo findExe("ms")
@@ -15,7 +16,12 @@ test "run":
   let session = driver.createSession()
 
   session.navigate("https://github.com/login")
-  echo session.getCurrentUrl()
+  let handle = session.getWindowHandle()
+
+  let window = session.newTab()
+  session.switchWindow(handle)
+
+  echo $session.getWindowHandles()
 
   while true:
     discard

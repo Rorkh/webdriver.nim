@@ -36,6 +36,8 @@ proc createSession*(self: WebDriver): Session =
   
   return Session(id: parsedid["value"]["sessionId"].getStr(), driver: self)
 
+# Navigation
+
 proc navigate*(self: Session, url:string) =
     let requrl = $(self.driver.url / "session" / self.id / "url")
     let obj = %*{"url": url}
@@ -98,6 +100,8 @@ proc getTitle*(self: Session): string =
     
     return respObj["value"].getStr() 
 
+# Contexts
+
 proc getWindowHandle*(self: Session): string =
     let requrl = $(self.driver.url / "session" / self.id / "window")
     let resp = self.driver.client.getContent(requrl)
@@ -114,6 +118,38 @@ proc closeWindow*(self: Session) =
 
     if respObj["value"].getStr() != "":
         raise newException(WebDriverException, $respObj)
+
+proc switchWindow*(self: Session, handle: string) =
+  let requrl = $(self.driver.url / "session" / self.id / "window")
+  let obj = %*{"handle": handle}
+
+  discard self.driver.client.postContent(requrl, $obj)
+
+proc getWindowHandles*(self: Session): seq =
+    let requrl = $(self.driver.url / "session" / self.id / "window" / "handles")
+    let resp = self.driver.client.getContent(requrl)
+
+    let respObj = parseJson(resp)
+
+    return respObj["value"].getElems()
+
+proc newTab*(self: Session): string =
+  let requrl = $(self.driver.url / "session" / self.id / "window" / "new")
+  let obj = %*{"type": "tab"}
+  let resp = self.driver.client.postContent(requrl, $obj)
+
+  let respObj = parseJson(resp)
+
+  return respObj["value"]["handle"].getStr()
+
+proc newWindow*(self: Session): string =
+  let requrl = $(self.driver.url / "session" / self.id / "window" / "new")
+  let obj = %*{"type": "window"}
+  let resp = self.driver.client.postContent(requrl, $obj)
+
+  let respObj = parseJson(resp)
+
+  return respObj["value"]["handle"].getStr()
 
 proc maximize*(self: Session) =
     let requrl = $(self.driver.url / "session" / self.id / "window" / "maximize")
