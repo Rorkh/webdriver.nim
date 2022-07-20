@@ -1,0 +1,33 @@
+Session	webdriver/session.html#Session	session: Session	
+ProtocolException	webdriver/session.html#ProtocolException	session: ProtocolException	
+createSession	webdriver/session.html#createSession,WebDriver	session: createSession(self: WebDriver): Session	
+navigate	webdriver/session.html#navigate,Session,string	session: navigate(self: Session; url: string)	
+getCurrentUrl	webdriver/session.html#getCurrentUrl,Session	session: getCurrentUrl(self: Session): string	
+back	webdriver/session.html#back,Session,int	session: back(self: Session; count: int = 1)	
+forward	webdriver/session.html#forward,Session,int	session: forward(self: Session; count: int = 1)	
+refresh	webdriver/session.html#refresh,Session	session: refresh(self: Session)	
+getTitle	webdriver/session.html#getTitle,Session	session: getTitle(self: Session): string	
+getWindowHandle	webdriver/session.html#getWindowHandle,Session	session: getWindowHandle(self: Session): string	
+closeWindow	webdriver/session.html#closeWindow,Session	session: closeWindow(self: Session)	
+switchWindow	webdriver/session.html#switchWindow,Session,string	session: switchWindow(self: Session; handle: string)	
+getWindowHandles	webdriver/session.html#getWindowHandles,Session	session: getWindowHandles(self: Session): seq	
+newTab	webdriver/session.html#newTab,Session	session: newTab(self: Session): string	
+newWindow	webdriver/session.html#newWindow,Session	session: newWindow(self: Session): string	
+maximize	webdriver/session.html#maximize,Session	session: maximize(self: Session)	
+minimize	webdriver/session.html#minimize,Session	session: minimize(self: Session)	
+fullScreen	webdriver/session.html#fullScreen,Session	session: fullScreen(self: Session)	
+getPageSource	webdriver/session.html#getPageSource,Session	session: getPageSource(self: Session): string	
+getAllCookies	webdriver/session.html#getAllCookies,Session	session: getAllCookies(self: Session): seq	
+addCookies	webdriver/session.html#addCookies,Session,seq	session: addCookies(self: Session; toadd: seq)	
+deleteAllCookies	webdriver/session.html#deleteAllCookies,Session	session: deleteAllCookies(self: Session)	
+takeScreenshot	webdriver/session.html#takeScreenshot,Session,string	session: takeScreenshot(self: Session; filename: string)	
+takeElementScreenshot	webdriver/session.html#takeElementScreenshot,Session,string,string	session: takeElementScreenshot(self: Session; elementid: string; filename: string)	
+executeScript	webdriver/session.html#executeScript,Session,string	session: executeScript(self: Session; script: string)	
+executeAsyncScript	webdriver/session.html#executeAsyncScript,Session,string	session: executeAsyncScript(self: Session; script: string)	
+dissmissAlert	webdriver/session.html#dissmissAlert,Session	session: dissmissAlert(self: Session)	
+acceptAlert	webdriver/session.html#acceptAlert,Session	session: acceptAlert(self: Session)	
+alertText	webdriver/session.html#alertText,Session	session: alertText(self: Session): string	
+findElement	webdriver/session.html#findElement,Session,string,string	session: findElement(self: Session; use: string; value: string): string	
+click	webdriver/session.html#click,Session,string	session: click(self: Session; elementid: string)	
+sendKeys	webdriver/session.html#sendKeys,Session,string,string	session: sendKeys(self: Session; elementid: string; text: string)	
+clear	webdriver/session.html#clear,Session,string	session: clear(self: Session; elementid: string)	

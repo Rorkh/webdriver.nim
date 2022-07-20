@@ -1,0 +1,15 @@
+External	webdriver/webdriver.html#External	WebDriverKind.External	
+Remote	webdriver/webdriver.html#Remote	WebDriverKind.Remote	
+WebDriverKind	webdriver/webdriver.html#WebDriverKind	webdriver: WebDriverKind	
+WebDriverSettings	webdriver/webdriver.html#WebDriverSettings	webdriver: WebDriverSettings	
+WebDriver	webdriver/webdriver.html#WebDriver	webdriver: WebDriver	
+WebDriverException	webdriver/webdriver.html#WebDriverException	webdriver: WebDriverException	
+newWebDriverSettings	webdriver/webdriver.html#newWebDriverSettings,string	webdriver: newWebDriverSettings(port: string = &quot;9515&quot;): WebDriverSettings	
+newWebDriverSettings	webdriver/webdriver.html#newWebDriverSettings,string,Table[string,string]	webdriver: newWebDriverSettings(port: string = &quot;9515&quot;; capabilites: Table[string, string]): WebDriverSettings	
+newRemoteWebDriver	webdriver/webdriver.html#newRemoteWebDriver,string	webdriver: newRemoteWebDriver(url: string = &quot;http://localhost:9515&quot;): WebDriver	
+newChromeWebDriver	webdriver/webdriver.html#newChromeWebDriver,WebDriverSettings	webdriver: newChromeWebDriver(settings: WebDriverSettings): WebDriver	
+newChromeWebDriver	webdriver/webdriver.html#newChromeWebDriver	webdriver: newChromeWebDriver(): WebDriver	
+newGeckoWebDriver	webdriver/webdriver.html#newGeckoWebDriver,WebDriverSettings	webdriver: newGeckoWebDriver(settings: WebDriverSettings): WebDriver	
+newGeckoWebDriver	webdriver/webdriver.html#newGeckoWebDriver	webdriver: newGeckoWebDriver(): WebDriver	
+newEdgeWebDriver	webdriver/webdriver.html#newEdgeWebDriver,WebDriverSettings	webdriver: newEdgeWebDriver(settings: WebDriverSettings): WebDriver	
+newEdgeWebDriver	webdriver/webdriver.html#newEdgeWebDriver	webdriver: newEdgeWebDriver(): WebDriver	
