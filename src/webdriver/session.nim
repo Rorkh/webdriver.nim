@@ -14,7 +14,7 @@ type
 proc createSession*(self: WebDriver): Session =
   if self.kind == WebDriverKind.External:
     self.url = "http://localhost:9515".parseUri
-    discard startProcess(self.filepath)
+    discard startProcess(self.filepath, "", ["-p", "9515"])
 
   let resp = self.client.getContent($(self.url / "status"))
   let parsed = parseJson(resp)
