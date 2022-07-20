@@ -13,8 +13,8 @@ type
 
 proc createSession*(self: WebDriver): Session =
   if self.kind == WebDriverKind.External:
-    self.url = "http://localhost:9515".parseUri
-    discard startProcess(self.filepath, "", ["-p", "9515"])
+    self.url = ("http://localhost:" & self.settings.port).parseUri
+    discard startProcess(self.filepath, "", ["-p", self.settings.port])
 
   let resp = self.client.getContent($(self.url / "status"))
   let parsed = parseJson(resp)
@@ -26,7 +26,7 @@ proc createSession*(self: WebDriver): Session =
   if not parsed["value"]["ready"].getBool():
       raise newException(WebDriverException, "WebDriver is not Ready")
 
-  let sessionReq = %*{"capabilities": {}}
+  let sessionReq = %*{"capabilities": self.settings.capabilities}
   let sessionResp = self.client.postContent($(self.url / "session"),
                                                       $sessionReq)
 
